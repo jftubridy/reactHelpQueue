@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 function MyStyledComponent(props) {
@@ -11,10 +12,11 @@ function MyStyledComponent(props) {
       <h1>Hey, I'm a component</h1>
       <h2>But there's something different about me .....</h2>
       <h3>Unlike other components you have worked with thus far....</h3>
-      <h>I also include custom CSS sytles!</h4>
+      <h4>I also include custom CSS sytles!</h4>
       <p>Pretty cool, right</p>
     </div>
   );
 }
 
 export default MyStyledComponent;
+*/
