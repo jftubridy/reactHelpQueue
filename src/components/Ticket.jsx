@@ -14,7 +14,7 @@ function Ticket(props){
 // PropTypes is referring to the PropTypes class we import at the top
 Ticket.propTypes = {
   names: PropTypes.string,
-  locaton: PropTypes.string,
+  location: PropTypes.string,
   issue: PropTypes.string
 }
 
