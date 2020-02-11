@@ -24,7 +24,7 @@ var masterTicketList = [
 function TicketList(){
   return (
     <div>
-       <style jsx>{`
+      <style jsx>{`
         div {
           background-color: blue;
         }
