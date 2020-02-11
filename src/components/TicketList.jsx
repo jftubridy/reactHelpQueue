@@ -3,7 +3,7 @@ import Ticket from './Ticket';
 
 var masterTicketList = [
   {
-    names: 'Thato and Haley',
+    names: 'Potato and Kaley',
     location: '3A',
     issue: 'Firebase won\'t save record. Halp'
   },
@@ -24,6 +24,11 @@ var masterTicketList = [
 function TicketList(){
   return (
     <div>
+       <style jsx>{`
+        div {
+          background-color: blue;
+        }
+      `}</style>
       <hr/>
       {masterTicketList.map((ticket, index) =>
         <Ticket names={ticket.names}
