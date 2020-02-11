@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Ticket(props){
   return (
@@ -8,7 +8,7 @@ function Ticket(props){
       <p><em>{props.issue}</em></p>
       <hr/>
     </div>
-  )
+  );
 }
 // propTypes is declaring a propTypes property on our Ticket componenent
 // PropTypes is referring to the PropTypes class we import at the top
@@ -16,9 +16,9 @@ Ticket.propTypes = {
   names: PropTypes.string,
   location: PropTypes.string,
   issue: PropTypes.string
-}
+};
 
-export default Ticket
+export default Ticket;
 
 
 /*
