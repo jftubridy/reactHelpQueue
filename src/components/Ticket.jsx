@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
 function Ticket(props){
   return (
     <div>
       <h3>{props.location} - {props.names}</h3>
-      <h4>{displayTimeOpen(props.timeOpen)} ago</h4>
+      <h4>{props.formattedWaitTime} ago</h4>
       <p>   <style global jsx>{`
         p {
           color: red;
@@ -16,19 +15,13 @@ function Ticket(props){
     </div>
   );
 }
-
-function displayTimeOpen(timeOpen) {
-  return timeOpen.from(new Moment(), true);
-  // calls new Moment() creates a Moment object with the current time
-}
-
 // propTypes is declaring a propTypes property on our Ticket componenent
 // PropTypes is referring to the PropTypes class we import at the top
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  timeOpen: PropTypes.instanceOf(Moment).isRequired
+  formattedWaitTime: PropTypes.string.isRequired,
 };
 
 export default Ticket;
