@@ -13,3 +13,5 @@ function SomeComponent() {
     </div>
   );
 }
+
+export default SomeComponent;
