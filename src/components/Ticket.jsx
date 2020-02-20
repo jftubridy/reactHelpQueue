@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Ticket(props){
-  return (
+function Ticket(props) {
+  const ticketInformation =
     <div>
       <h3>{props.location} - {props.names}</h3>
       <h4>{props.formattedWaitTime} ago</h4>
@@ -11,9 +11,21 @@ function Ticket(props){
           color: red;
         }
       `}</style><em>{props.issue}</em></p>
-      <hr/>
-    </div>
-  );
+      <hr />
+    </div>;
+  if (props.currentRouterPath === '/admin') {
+    return (
+      <div onClick={() => { alert('hey, you just clicked the ticket belonging to ' + props.names); }}>
+        {ticketInformation}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {ticketInformation}
+      </div>
+    );
+  }
 }
 // propTypes is declaring a propTypes property on our Ticket componenent
 // PropTypes is referring to the PropTypes class we import at the top
@@ -22,6 +34,7 @@ Ticket.propTypes = {
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
   formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 };
 
 export default Ticket;

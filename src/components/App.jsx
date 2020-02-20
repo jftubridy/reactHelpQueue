@@ -6,6 +6,7 @@ import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Picture from './Picture';
 import Moment from 'moment';
+import Admin from './Admin';
 
 class App extends React.Component {
 
@@ -60,7 +61,7 @@ class App extends React.Component {
 
   handleAddingNewTicketToList(newTicket) {
     var newMasterTicketList = this.state.masterTicketList.slice();
-    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true)
+    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
     newMasterTicketList.push(newTicket);
     this.setState({ masterTicketList: newMasterTicketList });
   }
@@ -73,6 +74,8 @@ class App extends React.Component {
           <Route exact path='/' render={() => <TicketList ticketList={this.state.masterTicketList} />} />
           {/* providing masterTicketList to TicketLIst as a prop */}
           <Route path='/newticket' render={() => <NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/admin' render={(props) => <Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} />} />
+          {/* detemines whether TicketList is rendered on admin or index routes */}
           <Route component={Error404} />
         </Switch>
         <Picture />
@@ -80,5 +83,6 @@ class App extends React.Component {
     );
   }
 }
+
 //using exact above helps protect us from accidently loading too many things
 export default App;
