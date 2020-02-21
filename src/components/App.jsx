@@ -50,11 +50,11 @@ class App extends React.Component {
   }
 
   updateTicketElapsedWaitTime() {
-    var newMasterTicketList = Objec.assign({}, this.state.masterTicketList);
-    Object.keys(newMasterTicketList.forEach(ticketId => {
+    var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+    Object.keys(newMasterTicketList).forEach(ticketId => {
       newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
     });
-    this.setState({ masterTicketList: newMasterTicketList });
+    this.setState({masterTicketList: newMasterTicketList});
   }
 
   handleAddingNewTicketToList(newTicket) {
@@ -71,7 +71,7 @@ class App extends React.Component {
     // this.setState({ masterTicketList: newMasterTicketList });  older code
   }
 
-  handleChangingSelectedTicket(ticket) {
+  handleChangingSelectedTicket(ticketId) {
     this.setState({ selectedTicket: ticketId });
   }
 
